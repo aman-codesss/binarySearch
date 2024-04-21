@@ -1,8 +1,10 @@
+//the complexity is O(logN) which also compares 10 times, but compares 1000 times if we use linear search.
+
 #include<iostream>
 using namespace std;
 int binarySearch(int arr[],int size, int key){
 int s=0, e=size-1;
-int mid = (s+e)/2;
+ int mid = s+(e-s)/2;
 while(s<=e){
     if(arr[mid]==key){
         return mid;
@@ -14,7 +16,7 @@ while(s<=e){
     else{
         e=mid-1;
     }
-    mid = (s+e)/2;
+    mid = s+(e-s)/2;
     
 }
 return -1;
